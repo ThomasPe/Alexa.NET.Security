@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.NET.Security", "Alexa.NET.Security\Alexa.NET.Security.csproj", "{63C75CDA-404A-4551-8043-1710A3D67CC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.NET.Security.Middleware", "Alexa.NET.Security.Middleware\Alexa.NET.Security.Middleware.csproj", "{D286A615-A9E6-40C3-B59E-6652A16F8EB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{63C75CDA-404A-4551-8043-1710A3D67CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C75CDA-404A-4551-8043-1710A3D67CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C75CDA-404A-4551-8043-1710A3D67CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D286A615-A9E6-40C3-B59E-6652A16F8EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D286A615-A9E6-40C3-B59E-6652A16F8EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D286A615-A9E6-40C3-B59E-6652A16F8EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D286A615-A9E6-40C3-B59E-6652A16F8EB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
