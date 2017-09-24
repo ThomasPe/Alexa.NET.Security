@@ -11,3 +11,16 @@ Verify a reqeust by using
 using Alexa.NET.Security;
 var isValid =  await RequestVerification.Verify(string encodedSignature, Uri certificatePath, string body);
 ```
+
+## Add ASP.NET Core 2.0 Middleware
+```csharp
+// Startup.cs
+using Alexa.NET.Security.Middleware;
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    //...
+    app.UseAlexaRequestValidation();
+    app.UseMvc();
+}
+```
