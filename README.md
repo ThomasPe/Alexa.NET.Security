@@ -14,7 +14,7 @@ var isValid =  await RequestVerification.Verify(string encodedSignature, Uri cer
 ```
 
 ## Add ASP.NET Core 2.0 Middleware
-Install from NuGet 
+Install from [NuGet](https://www.nuget.org/packages/Alexa.NET.Security.Middleware/)
 
 `Install-Package Alexa.NET.Security.Middleware`
 
