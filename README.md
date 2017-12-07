@@ -1,7 +1,7 @@
 # Alexa.NET.Security
 This is a library to authenticate requests sent to an Alexa .NET backend. It was [initially written](https://github.com/timheuer/alexa-skills-dotnet/pull/35) by [stoiveyp](https://github.com/stoiveyp) for the [Alexa Skills SDK for .NET by Tim Heuer](https://github.com/timheuer/alexa-skills-dotnet).
 
-It will take care of almost all additional [security requirements] for self-hosted skills(https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-web-service#verifying-that-the-request-was-sent-by-alexa):
+It will take care of almost all additional [security requirements](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-web-service#verifying-that-the-request-was-sent-by-alexa) for self-hosted skills:
 - [x] Check the request signature to verify the authenticity of the request.
 - [x] Check the request timestamp to ensure that the request is not an old request being sent as part of a “replay” attack.
 - [x] Validate the signature in the HTTP headers
