@@ -1,3 +1,5 @@
+# This respository is obsolete since request validation has been added to the core Alexa.NET package! 
+
 # Alexa.NET.Security
 This is a library to authenticate requests sent to an Alexa .NET backend. It was [initially written](https://github.com/timheuer/alexa-skills-dotnet/pull/35) by [stoiveyp](https://github.com/stoiveyp) for the [Alexa Skills SDK for .NET by Tim Heuer](https://github.com/timheuer/alexa-skills-dotnet).
 
