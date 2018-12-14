@@ -1,3 +1,5 @@
+This legacy branch still contains the actual validation logic that meanwhile has been added to the Alexa.NET project and therefore was removed from this repository.
+
 # This respository is obsolete since request validation has been added to the core Alexa.NET package! 
 
 # Alexa.NET.Security
