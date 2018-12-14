@@ -5,14 +5,19 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Thomas Pentenrieder</Authors>
     <Company>medienstudio.net</Company>
-    <Description>Add Alexa.NET.Security to your ASP.NET Core 2.0 request pipeline to validate requests from the Amazon Alexa services.</Description>
-    <Copyright>© Thomas Pentenrieder | 2017</Copyright>
+    <Description>Add Alexa.NET request verification to your ASP.NET Core 2.0 request pipeline to validate requests from the Amazon Alexa services.</Description>
+    <Copyright>© Thomas Pentenrieder | 2018</Copyright>
     <PackageLicenseUrl>https://github.com/ThomasPe/Alexa.NET.Security/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/ThomasPe/Alexa.NET.Security</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ThomasPe/Alexa.NET.Security</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>alexa, alexa.net, authentication, middleware</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.1.0
+- Use Alexa.NET for request verification
+
+Version 1.0.0
+- Initial release</PackageReleaseNotes>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -20,8 +25,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Alexa.NET.Security" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.1.1" />
+    <PackageReference Include="Alexa.NET" Version="1.5.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

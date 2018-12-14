@@ -1,7 +1,6 @@
-# This respository is obsolete since request validation has been added to the core Alexa.NET package! 
-
 # Alexa.NET.Security
-This is a library to authenticate requests sent to an Alexa .NET backend. It was [initially written](https://github.com/timheuer/alexa-skills-dotnet/pull/35) by [stoiveyp](https://github.com/stoiveyp) for the [Alexa Skills SDK for .NET by Tim Heuer](https://github.com/timheuer/alexa-skills-dotnet).
+This is a middleware library to authenticate requests sent to an Alexa ASP.NET backend. 
+It wraps the verification logic of the [Alexa Skills SDK for .NET](https://github.com/timheuer/alexa-skills-dotnet) in an easy to use middleware.
 
 It will take care of almost all additional [security requirements](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-web-service#verifying-that-the-request-was-sent-by-alexa) for self-hosted skills:
 - [x] Check the request signature to verify the authenticity of the request.
@@ -14,16 +13,7 @@ It will take care of almost all additional [security requirements](https://devel
 - [x] Verify request body hash value
 
 
-# Getting started
-Install from [NuGet](https://www.nuget.org/packages/Alexa.NET.Security)
-
-`Install-Package Alexa.NET.Security`
-
-Verify a reqeust by using 
-```csharp
-using Alexa.NET.Security;
-var isValid =  await RequestVerification.Verify(string encodedSignature, Uri certificatePath, string body);
-```
+# Getting Started
 
 ## Add ASP.NET Core 2.0 Middleware
 Install from [NuGet](https://www.nuget.org/packages/Alexa.NET.Security.Middleware/)
