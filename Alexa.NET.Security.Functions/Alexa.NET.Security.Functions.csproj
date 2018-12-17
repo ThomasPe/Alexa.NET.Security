@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Thomas Sebastian Jensen</Authors>
+    <Company>tsjdev-apps.de</Company>
+    <Product></Product>
+    <Description>Add Alexa.NET reqeuest verification for Azure Functions to validate requests from the Amazon Alexa services.</Description>
+    <Copyright>© Thomas Sebastian Jensen | 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/ThomasPe/Alexa.NET.Security/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ThomasPe/Alexa.NET.Security</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ThomasPe/Alexa.NET.Security</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>alexa, alexa.net, authentication, azure function, azure</PackageTags>
+    <PackageReleaseNotes>Version 1.0.0
+- Initial release</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
