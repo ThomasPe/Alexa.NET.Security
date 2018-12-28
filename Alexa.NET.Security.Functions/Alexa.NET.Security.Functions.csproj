@@ -12,9 +12,13 @@
     <RepositoryUrl>https://github.com/ThomasPe/Alexa.NET.Security</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>alexa, alexa.net, authentication, azure function, azure</PackageTags>
-    <PackageReleaseNotes>Version 1.0.0
-- Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.0.1: Adjust namespace</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>1.0.1</PackageVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Summary>Add Alexa.NET reqeuest verification for Azure Functions to validate requests from the Amazon Alexa services.</Summary>
+    <Title>Alexa.NET.Security.Functions</Title>
   </PropertyGroup>
 
   <ItemGroup>
