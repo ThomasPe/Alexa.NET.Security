@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace AlexaFunctionsApp
+namespace Alexa.NET.Security.Functions
 {
     public static class AlexaRequestValidationFunctionsExtension
     {
