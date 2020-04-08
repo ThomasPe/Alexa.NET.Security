@@ -3,12 +3,16 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace Alexa.NET.Security.Functions
 {
     public static class AlexaRequestValidationFunctionsExtension
     {
+        private static KeyValuePair<Uri, X509Certificate2> certificateCache;
+
         /// <summary>
         /// Validates an incoming request against Amazon security guidelines.
         /// </summary>
@@ -83,6 +87,30 @@ namespace Alexa.NET.Security.Functions
             return signatureCertChainUrl;
         }
 
+        private static async Task<X509Certificate2> GetCertificate(Uri signatureCertChainUrl)
+        {
+            if (signatureCertChainUrl == null)
+                return null;
+
+            if (certificateCache.Key == null || certificateCache.Key.ToString().ToLowerInvariant() != signatureCertChainUrl.ToString().ToLowerInvariant())
+            {
+                try
+                {
+                    X509Certificate2 certificate = await RequestVerification.GetCertificate(signatureCertChainUrl);
+                    if (certificate != null)
+                        certificateCache = new KeyValuePair<Uri, X509Certificate2>(signatureCertChainUrl, certificate);
+
+                    return certificate;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+            else
+                return certificateCache.Value;
+        }
+
         /// <summary>
         /// Gets the Signature value from http request headers.
         /// </summary>
@@ -124,7 +152,7 @@ namespace Alexa.NET.Security.Functions
         /// <returns></returns>
         private static async Task<bool> IsRequestValid(string signature, Uri signatureCertChainUrl, string body)
         {
-            return await RequestVerification.Verify(signature, signatureCertChainUrl, body);
+            return await RequestVerification.Verify(signature, signatureCertChainUrl, body, GetCertificate);
         }
     }
 }
