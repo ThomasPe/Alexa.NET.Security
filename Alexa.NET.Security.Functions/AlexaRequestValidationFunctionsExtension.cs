@@ -89,18 +89,25 @@ namespace Alexa.NET.Security.Functions
 
         private static async Task<X509Certificate2> GetCertificate(Uri signatureCertChainUrl)
         {
-            if(signatureCertChainUrl == null)
+            if (signatureCertChainUrl == null)
                 return null;
 
-            if (certificateCache.Key == null || certificateCache.Key.ToString() != signatureCertChainUrl.ToString())
+            if (certificateCache.Key == null || certificateCache.Key.ToString().ToLowerInvariant() != signatureCertChainUrl.ToString().ToLowerInvariant())
             {
-                X509Certificate2 certificate = await RequestVerification.GetCertificate(signatureCertChainUrl);
-                if (certificate != null)
-                    certificateCache = new KeyValuePair<Uri, X509Certificate2>(signatureCertChainUrl, certificate);
+                try
+                {
+                    X509Certificate2 certificate = await RequestVerification.GetCertificate(signatureCertChainUrl);
+                    if (certificate != null)
+                        certificateCache = new KeyValuePair<Uri, X509Certificate2>(signatureCertChainUrl, certificate);
 
-                return certificate;
+                    return certificate;
+                }
+                catch
+                {
+                    return null;
+                }
             }
-            else 
+            else
                 return certificateCache.Value;
         }
 
