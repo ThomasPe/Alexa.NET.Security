@@ -32,7 +32,7 @@ namespace Alexa.NET.Security.Middleware
         public async Task Invoke(HttpContext context)
         {
             // EnableRewind so the body can be read without causing issues to the request pipeline
-            context.Request.EnableRewind();
+            context.Request.EnableBuffering();
             
             // Verify SignatureCertChainUrl is present
             context.Request.Headers.TryGetValue("SignatureCertChainUrl", out var signatureChainUrl);
@@ -61,7 +61,7 @@ namespace Alexa.NET.Security.Middleware
                 return;
             }
 
-            string body = new StreamReader(context.Request.Body).ReadToEnd();
+            string body = await new StreamReader(context.Request.Body).ReadToEndAsync();
             context.Request.Body.Position = 0;
 
             if (String.IsNullOrWhiteSpace(body))
