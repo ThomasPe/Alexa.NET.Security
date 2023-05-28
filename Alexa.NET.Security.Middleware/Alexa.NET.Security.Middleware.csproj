@@ -25,7 +25,7 @@ Version 1.0.0
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Alexa.NET" Version="1.5.7" />
+    <PackageReference Include="Alexa.NET" Version="1.22.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
   </ItemGroup>
 
